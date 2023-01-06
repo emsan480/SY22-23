@@ -6,9 +6,43 @@
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid RenderTransformOrigin="0.564,0.216">
-        <Button Content="Button" HorizontalAlignment="Left" Margin="320,138,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.449,0.772" Click="Button_Click"/>
-        <TextBox x:Name="textbox1" HorizontalAlignment="Left" Margin="400,140,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
 
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="267*"/>
+            <ColumnDefinition Width="133*"/>
+        </Grid.ColumnDefinitions>
+        <Menu Grid.ColumnSpan="2">
+            <MenuItem Header="_Edit">
+                <MenuItem Command="ApplicationCommands.Copy"/>
+                <MenuItem Command="ApplicationCommands.Cut"/>
+                <MenuItem Command="ApplicationCommands.Paste"/>
+            </MenuItem>
+            <MenuItem Header="_Font">
+                <MenuItem Header="_Bold" IsCheckable="True"
+              Checked="Bold_Checked"
+              Unchecked="Bold_Unchecked"/>
+                <MenuItem Header="_Italic" IsCheckable="True"
+              Checked="Italic_Checked"
+              Unchecked="Italic_Unchecked"/>
+                <Separator/>
+                <MenuItem Header="I_ncrease Font Size"
+              Click="IncreaseFont_Click"/>
+                <MenuItem Header="_Decrease Font Size"
+              Click="DecreaseFont_Click"/>
+            </MenuItem>
+            <MenuItem Header="_file">
+                <MenuItem Command="ApplicationCommands.Copy"/>
+                <MenuItem Command="ApplicationCommands.Cut"/>
+                <MenuItem Command="ApplicationCommands.Paste"/>
+            </MenuItem>
+            <MenuItem Header="_save">
+                <MenuItem Command="ApplicationCommands.Copy"/>
+                <MenuItem Command="ApplicationCommands.Cut"/>
+                <MenuItem Command="ApplicationCommands.Paste"/>
+            </MenuItem>
+        </Menu>
+        <TextBox x:Name="textBox1" TextWrapping="Wrap"
+         Margin="4,24,0,-20" Grid.ColumnSpan="2" Text="The quick brown fox jumps over the lazy dog.&#xD;&#xA;"/>
     </Grid>
 </Window>
